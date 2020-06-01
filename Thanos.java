@@ -5,8 +5,7 @@ public class Thanos {
     public static void main(String[] args) {
 
         TreeSet<Hero> heroes = new TreeSet<>();
-        Hero hulk = new Hero("Hulk", 49);
-        heroes.add(hulk);
+        heroes.add(new Hero("Hulk", 49));
         heroes.add(new Hero("Black Widow", 34));
         heroes.add(new Hero("Captain America", 100));
         heroes.add(new Hero("Thor", 1501));
@@ -33,7 +32,7 @@ public class Thanos {
         heroes.add(ironman);
 
         System.out.println("\nSubset of heroes :");
-        for (Hero hero : heroes.subSet(spiderman, hulk)) {
+        for (Hero hero : heroes.subSet(spiderman, true, ironman, true)) {
             System.out.println(hero.getName() + ", " + hero.getAge());
         }
     }
